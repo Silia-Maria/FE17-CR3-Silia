@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { dishes } from '../dishes';
 import { IDishes } from '../IDishes';
+import { dishes } from '../dishes';
+
 
 @Component({
   selector: 'app-menu',

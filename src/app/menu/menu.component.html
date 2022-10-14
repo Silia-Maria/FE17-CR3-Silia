@@ -2,18 +2,17 @@
     <h1 class="logoHeader text-center">Our specialties</h1>
 
     <!-- Card -->
-    <div class="row row-cols-1 row-cols-md-3  g-4 my-3">
-        <div class="col" *ngFor="let dish of dishes">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3  g-4 my-3">
+        <div class="col" *ngFor="let dish of dishes, index as dishId">
             <div class="card">
                 <img src="assets/images/{{dish.img}}" class="card-img-top dishImage" alt="...">
                 <div class="card-body">
                     <h5 class="card-title">{{dish.name}}</h5> <span class="fs-5">{{dish.price}} €</span>
                     <hr>
 
-
                     <ng-template [ngIf]="dish.availability == true" [ngIfElse]="not">
 
-                        <button type="button" class="btn btn-light me-2">Details</button>
+                        <button type="button" class="btn btn-light me-2" routerLink="/details/{{dishId}}">Details</button>
                         <button type="button" class="btn btn-outline-success">Order</button>
                     </ng-template>
 
