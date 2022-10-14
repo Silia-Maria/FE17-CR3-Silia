@@ -3,6 +3,10 @@ import { IDishes } from '../IDishes';
 import { dishes } from '../dishes';
 
 
+
+
+
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -10,10 +14,14 @@ import { dishes } from '../dishes';
 })
 export class MenuComponent implements OnInit {
   dishes: IDishes [] = dishes;
+  
 
   constructor() { }
 
+  
+
   ngOnInit(): void {
+   
   }
 
 }

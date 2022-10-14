@@ -4,9 +4,9 @@
         <div class="card-body">
             <h5 class="card-title">{{dish.name}}</h5>
             <p class="card-text">{{dish.description}}</p>
-            <p class="d-flex justify-content-end fs-2">{{dish.price}} € </p>
+            <p class="d-flex justify-content-end fs-2">{{dish.price | currency}}</p>
             <div class="me-0 d-flex justify-content-end">
-                <button type="button" class=" btn btn-success "><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
+                <button type="button" class=" btn btn-success " (click)="addToCart()"><i class="fa-solid fa-cart-shopping"></i> Add to Cart</button>
             </div>
         </div>
     </div>

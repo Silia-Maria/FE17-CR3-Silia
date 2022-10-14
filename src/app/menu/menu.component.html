@@ -7,7 +7,7 @@
             <div class="card">
                 <img src="assets/images/{{dish.img}}" class="card-img-top dishImage" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{dish.name}}</h5> <span class="fs-5">{{dish.price}} €</span>
+                    <h5 class="card-title">{{dish.name}}</h5> <span class="fs-5">{{dish.price | currency}}</span>
                     <hr>
 
                     <ng-template [ngIf]="dish.availability == true" [ngIfElse]="not">
