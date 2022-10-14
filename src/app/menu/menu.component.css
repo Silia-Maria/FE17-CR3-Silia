@@ -1,0 +1,9 @@
+.logoHeader {
+    font-family: 'Sacramento', cursive;
+    font-size: 500%;
+}
+
+.dishImage {
+    height: 300px;
+    object-fit: cover;
+}
