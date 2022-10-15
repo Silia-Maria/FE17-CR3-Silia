@@ -1,12 +1,12 @@
 <div class="container">
 
-
     <div class="d-flex justify-content-center my-5">
         <!-- Cart with products -->
 
         <div class="order border border-black rounded me-5">
             <h4 class="bg-light p-3">Cart - item(s)</h4>
             <div *ngFor="let item of items">
+
                 <div class="d-flex justify-content-between p-1">
                     <img src="/assets/images/{{item.img}}" class="cartImage m-2">
                     <div class="mt-4">
@@ -23,31 +23,37 @@
 
         <div class="summary border border-black rounded mb-5">
             <h4 class="bg-light p-3 ">Summary</h4>
+
+            <!-- Left Side -->
             <div class="d-flex justify-content-between p-3 align-self-start">
                 <div>
                     <p>Products</p>
-
+                    <p>Service</p>
                     <p>15 % Discount</p>
                 </div>
                 <div>
                     <p>{{total | currency}}</p>
+                    <p>{{service | currency}}</p>
 
+                    <!-- Discout -->
                     <div *ngIf="total >=40">
                         <p>{{total * 0.15 | currency}}</p>
                     </div>
                 </div>
             </div>
+
             <hr>
 
+            <!-- Right Side -->
             <div class="d-flex justify-content-between p-3">
                 <p><b>Total amount</b></p>
                 <div>
                     <ng-template [ngIf]="total >= 40" [ngIfElse]="normal">
-                        <p>{{total * 0.85 | currency}}</p>
+                        <p>{{total * 0.85 + service | currency}}</p>
                     </ng-template>
 
                     <ng-template #normal>
-                        <p>{{total | currency}}</p>
+                        <p>{{total + service | currency}}</p>
 
                     </ng-template>
                 </div>
@@ -61,6 +67,7 @@
     <div class="my-5">
         <h1 class="logoHeader">Order Form</h1>
         <p>please fill up the info for delivery!</p>
+
         <hr>
 
         <form [formGroup]="info" (ngSubmit)="onSubmit()">

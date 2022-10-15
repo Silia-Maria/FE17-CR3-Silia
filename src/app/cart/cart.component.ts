@@ -11,6 +11,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class CartComponent implements OnInit {
   items: Array<IDishes> = [];
   total: number = this.cartService.result();
+  service: number = this.cartService.result()*0.1;
+
   
   info = new FormGroup({
     name: new FormControl("", Validators.required),
